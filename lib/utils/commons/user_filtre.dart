@@ -5,9 +5,9 @@ import 'package:get/get.dart';
 import 'package:hoays/utils/colors.dart';
 import 'package:hoays/widgets/my_button.dart';
 
-import '../page/home/home_controller.dart';
-import '../utils/icons.dart';
-import '../utils/textStyle.dart';
+import '../../page/home/home_controller.dart';
+import '../icons.dart';
+import '../textStyle.dart';
 
 class MyUserFilter extends StatelessWidget {
   final bool isSort;
@@ -211,9 +211,9 @@ class MyUserFilter extends StatelessWidget {
                     borderRadius: const BorderRadius.all(Radius.circular(10)),
                     border: Border.all(color: Colors.grey.shade300, width: 1)),
 
-                countrySearchPlaceholder: "Ülke",
-                stateSearchPlaceholder: "İl",
-                citySearchPlaceholder: "İlçe",
+                countrySearchPlaceholder: "Ülke Seç Kanka - İngilizce Çıkıyor",
+                stateSearchPlaceholder: "İl Seç Kanka",
+                citySearchPlaceholder: "İlçe Seç Kanka",
 
                 countryDropdownLabel: homeController.countryValue.value,
                 stateDropdownLabel: homeController.stateValue.value,

@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
-import 'package:hoays/commons/user_story/other_user_story.dart';
-import 'package:hoays/commons/user_story/user_story.dart';
 import 'package:hoays/page/story/my_story_detail/my_story_detail_page.dart';
+import 'package:hoays/widgets/appbar.dart';
 
-import '../../commons/search_bar.dart';
-import '../../commons/user_filtre.dart';
 import '../../model/user_model.dart';
-import '../../utils/icons.dart';
-import '../../utils/textStyle.dart';
+import '../../utils/commons/search_bar.dart';
+import '../../utils/commons/user_filtre.dart';
+import '../../utils/commons/user_story/other_user_story.dart';
+import '../../utils/commons/user_story/user_story.dart';
 import '../home/home_controller.dart';
 
 class StoryPage extends StatelessWidget {
@@ -22,31 +20,23 @@ class StoryPage extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            Row(
-              children: [
-                IconButton(
-                    onPressed: () {}, icon: SvgPicture.asset(MyIcons.chatIcon)),
-                Expanded(
-                  child: Text(
-                    'Hikayeler',
-                    textAlign: TextAlign.center,
-                    style: MyTextStyle.lato(),
-                  ),
-                ),
-                IconButton(
-                    onPressed: () {
-                      showPopupMenu(context);
-                    },
-                    icon: Container(
-                      decoration: BoxDecoration(
-                          border: Border.all(color: Colors.white),
-                          borderRadius: BorderRadius.circular(100)),
-                      child: const Padding(
-                        padding: EdgeInsets.all(8.0),
-                        child: Icon(Icons.more_vert_rounded),
-                      ),
-                    )),
-              ],
+            MyAppBar(
+              title: 'Hikayeler',
+              width: 0,
+              action: const Text(''),
+              iconButton: IconButton(
+                  onPressed: () {
+                    showPopupMenu(context);
+                  },
+                  icon: Container(
+                    decoration: BoxDecoration(
+                        border: Border.all(color: Colors.white),
+                        borderRadius: BorderRadius.circular(100)),
+                    child: const Padding(
+                      padding: EdgeInsets.all(8.0),
+                      child: Icon(Icons.more_vert_rounded),
+                    ),
+                  )),
             ),
             const SizedBox(height: 15),
             const Padding(
@@ -58,9 +48,7 @@ class StoryPage extends StatelessWidget {
             /// Burası Kaç Kullanıcı var ve Filtreleme Kullanılan ALan
             const Padding(
                 padding: EdgeInsets.symmetric(horizontal: 12),
-                child: MyUserFilter(
-                  isSort: false,
-                )),
+                child: MyUserFilter(isSort: false)),
             Column(
               mainAxisSize: MainAxisSize.min,
               children: [
@@ -104,7 +92,7 @@ class StoryPage extends StatelessWidget {
       const PopupMenuDivider(),
       PopupMenuItem<String>(
         onTap: () {
-          Get.to(()=>MyStoryDetailPage());
+          Get.to(() => const MyStoryDetailPage());
         },
         value: 'MyStory',
         child: const Text('Hikayelerim'),

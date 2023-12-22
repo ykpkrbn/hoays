@@ -22,6 +22,7 @@ class HomeController extends GetxController {
   void onInit() {
     searchEditingCtrl = TextEditingController();
     focusNode = FocusNode();
+    tokenSort();
     users.addAll(_fakeUserList);
     super.onInit();
   }
@@ -49,15 +50,18 @@ class HomeController extends GetxController {
   ];
 
   final List<UserModel> _fakeUserList = [
-    UserModel(userPhoto: MyImages.img1, userName: 'Cam35', bio: _fakeBio[0]),
-    UserModel(userPhoto: MyImages.img2, userName: 'Nicolas', bio: _fakeBio[1]),
-    UserModel(userPhoto: MyImages.img3, userName: 'Roger', bio: _fakeBio[2]),
-    UserModel(userPhoto: MyImages.img4, userName: 'Byneo', bio: _fakeBio[3]),
-    UserModel(userPhoto: MyImages.img5, userName: 'Asadas', bio: _fakeBio[4]),
-    UserModel(userPhoto: MyImages.img6, userName: 'Ahmet', bio: _fakeBio[5]),
-    UserModel(userPhoto: MyImages.img7, userName: 'Gizem', bio: _fakeBio[6]),
-    UserModel(userPhoto: MyImages.img8, userName: 'Mahmut', bio: _fakeBio[7]),
+    UserModel(userPhoto: MyImages.img1, userName: 'Cam35', bio: _fakeBio[0], tokenNumber: '500'),
+    UserModel(userPhoto: MyImages.img2, userName: 'Nicolas', bio: _fakeBio[1], tokenNumber: '300'),
+    UserModel(userPhoto: MyImages.img3, userName: 'Roger', bio: _fakeBio[2], tokenNumber: '1000'),
+    UserModel(userPhoto: MyImages.img4, userName: 'Byneo', bio: _fakeBio[3], tokenNumber: '150'),
+    UserModel(userPhoto: MyImages.img5, userName: 'Asadas', bio: _fakeBio[4],tokenNumber: '120'),
+    UserModel(userPhoto: MyImages.img6, userName: 'Ahmet', bio: _fakeBio[5],tokenNumber: '650'),
+    UserModel(userPhoto: MyImages.img7, userName: 'Gizem', bio: _fakeBio[6], tokenNumber: '700'),
+    UserModel(userPhoto: MyImages.img8, userName: 'Mahmut', bio: _fakeBio[7],tokenNumber: '40'),
   ];
+  void tokenSort(){
+    _fakeUserList.sort((a, b) => int.parse(b.tokenNumber ?? '0').compareTo(int.parse(a.tokenNumber ?? '0')));
+  }
 
   /// Filtrelemelerde bulunan yeri kontrol edip kaydetmeyi sağlar
   void filterSaved() {

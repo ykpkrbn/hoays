@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../../utils/colors.dart';
+import '../../colors.dart';
 
 /// Bu Sınıf Diğer Kullanıcıların Storyleri
 class OtherUserStory extends StatelessWidget {

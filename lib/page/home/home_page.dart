@@ -1,19 +1,21 @@
 import 'dart:math';
+
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
-import 'package:hoays/commons/search_bar.dart';
-import 'package:hoays/commons/user_filtre.dart';
-import 'package:hoays/commons/user_story/user_story.dart';
+
 import 'package:hoays/model/user_model.dart';
 import 'package:hoays/page/home/home_controller.dart';
 import 'package:hoays/page/home/messages/messages_page.dart';
 import 'package:hoays/page/home/users/users_page.dart';
 import 'package:hoays/utils/colors.dart';
-import 'package:hoays/utils/icons.dart';
-import 'package:hoays/utils/textStyle.dart';
+import 'package:hoays/widgets/appbar.dart';
+import 'package:hoays/widgets/my_button2.dart';
 
-import '../../commons/user_story/other_user_story.dart';
+import '../../utils/commons/search_bar.dart';
+import '../../utils/commons/user_filtre.dart';
+import '../../utils/commons/user_story/other_user_story.dart';
+import '../../utils/commons/user_story/user_story.dart';
+
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -26,33 +28,7 @@ class HomePage extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          Row(
-            children: [
-              IconButton(
-                  onPressed: () {}, icon: SvgPicture.asset(MyIcons.chatIcon)),
-              const SizedBox(width: 60),
-              Expanded(
-                child: Text(
-                  'Anasayfa',
-                  textAlign: TextAlign.center,
-                  style: MyTextStyle.lato(),
-                ),
-              ),
-              Row(
-                children: [
-                  IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(
-                        MyIcons.starIcon,
-                        width: 44,
-                      )),
-                  IconButton(
-                      onPressed: () {},
-                      icon: SvgPicture.asset(MyIcons.crownIcon)),
-                ],
-              )
-            ],
-          ),
+          const MyAppBar(title: 'Ana Sayfa'),
           const SizedBox(height: 15),
 
           /// Arama Çubuğu
@@ -87,10 +63,9 @@ class HomePage extends StatelessWidget {
           const Divider(),
 
           /// Burası Kaç Kullanıcı var ve Filtreleme Kullanılan ALan
-           const Padding(
+          const Padding(
               padding: EdgeInsets.symmetric(horizontal: 12),
-              child: MyUserFilter(
-                  isSort: true)),
+              child: MyUserFilter(isSort: true)),
 
           /// Mesaj Atılacak Kişileri Gösterir
           Column(
@@ -110,34 +85,12 @@ class HomePage extends StatelessWidget {
                     return const SizedBox(height: 130);
                   } else if (index < 4) {
                     if (index == 3) {
-                      return Padding(
-                        padding: const EdgeInsets.symmetric(horizontal: 25),
-                        child: MaterialButton(
-                          minWidth: Get.size.width * .8,
-                          padding: EdgeInsets.zero,
-                          height: 49,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(31),
-                          ),
-                          color: MyColors.orangeColor,
-                          onPressed: () {
-                            Get.to(() => const UsersPage());
-                          },
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                            children: [
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: SvgPicture.asset(MyIcons.rocketIcon),
-                              ),
-                              Text('Get More Messages', style: MyTextStyle.lato(),),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: SvgPicture.asset(MyIcons.arrowLeftIcon),
-                              ),
-                            ],
-                          ),
-                        ),
+                      return MyButton2(
+                        buttonText: 'Get More Messages',
+                        isRightImage: true,
+                        onPressed: () {
+                          Get.to(() => UsersPage());
+                        },
                       );
                     } else {
                       return ListTile(

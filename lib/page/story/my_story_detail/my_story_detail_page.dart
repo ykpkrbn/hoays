@@ -65,8 +65,9 @@ class MyStoryDetailPage extends StatelessWidget {
                 ? Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
+
                       Text(
-                        'Hikaye 20 saat 55 dakika daha yayınlanacak.',
+                        'Hikaye ${storyShareDate!.hour} saat ${storyShareDate.minute} dakika daha yayınlanacak.',
                         style: MyTextStyle.lexend(fontSize: 10),
                       ),
                       IconButton(
@@ -86,7 +87,7 @@ class MyStoryDetailPage extends StatelessWidget {
               children: [
                 CircleAvatar(
                   backgroundColor: MyColors.orangeColor,
-                  radius: 80,
+                  radius: 50,
                   backgroundImage: AssetImage(photo),
                 ),
                 const SizedBox(width: 15),
@@ -97,7 +98,7 @@ class MyStoryDetailPage extends StatelessWidget {
                       DateTime.now().hour - storyShareDate!.hour <= 24 &&
                               DateTime.now().day - storyShareDate.day < 1
                           ? Text(
-                              '${storyShareDate.hour} saat önce',
+                              '${24 - storyShareDate.hour} saat ${60 - storyShareDate.minute} önce ',
                               style: MyTextStyle.lexend(),
                             )
                           : Text(

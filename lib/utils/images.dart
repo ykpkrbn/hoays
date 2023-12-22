@@ -17,4 +17,16 @@ class MyImages{
   static const String img6 = '$_baseUrl/img_6.png';
   static const String img7 = '$_baseUrl/img_7.png';
   static const String img8 = '$_baseUrl/img_8.png';
+
+
+  /// Jeton Sayfasındaki Resimler
+  static const String jeton = '$_baseUrl/jeton.svg';
+  static const String madalyaBronz = '$_baseUrl/madalya_bronz.svg';
+  static const String madalyaSilver = '$_baseUrl/madalya_silver.svg';
+  static const String madalyaGold = '$_baseUrl/madalya_gold.svg';
+
+  /// Vip Sıralamasındaki ilk 3 kişinin Vip resmi
+  static const String vip1 ='$_baseUrl/vip1.svg';
+  static const String vip2 ='$_baseUrl/vip2.svg';
+  static const String vip3 ='$_baseUrl/vip3.svg';
 }

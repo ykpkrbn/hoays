@@ -2,9 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../page/home/home_controller.dart';
-import '../utils/colors.dart';
-import '../utils/icons.dart';
+import '../../page/home/home_controller.dart';
+import '../colors.dart';
+import '../icons.dart';
 
 class MySearchBar extends StatelessWidget {
   const MySearchBar({super.key});

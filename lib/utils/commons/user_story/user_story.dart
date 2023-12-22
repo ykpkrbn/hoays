@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
 
-import '../../utils/colors.dart';
-import '../../utils/icons.dart';
-import '../../utils/images.dart';
-import '../../utils/textStyle.dart';
-import '../../widgets/my_button.dart';
+import '../../../widgets/my_button.dart';
+import '../../colors.dart';
+import '../../icons.dart';
+import '../../images.dart';
+import '../../textStyle.dart';
 
 /// Bu Sınıf Benim Storylere giden kısım
 class MyUserStory extends StatelessWidget {
@@ -14,7 +14,6 @@ class MyUserStory extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
     return MaterialButton(
       padding: EdgeInsets.zero,
       shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
@@ -27,7 +26,7 @@ class MyUserStory extends StatelessWidget {
             return buildSheet();
           },
         );
-         print('Story Ekle');
+        print('Story Ekle');
       },
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
