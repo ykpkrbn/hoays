@@ -17,4 +17,7 @@ class MyImages{
   static const String img6 = '$_baseUrl/img_6.png';
   static const String img7 = '$_baseUrl/img_7.png';
   static const String img8 = '$_baseUrl/img_8.png';
+
+
+  static const String jeton = '$_baseUrl/jeton.svg';
 }

@@ -30,6 +30,14 @@ class MyTextStyle{
      color: color ?? MyColors.lexendColor,
    );
  }
+ static TextStyle lexendButton({double? fontSize,FontWeight? fontWeight,Color? color}){
+   return GoogleFonts.lexend(
+     fontSize: fontSize ?? 14,
+     fontWeight: fontWeight ?? FontWeight.w400,
+     letterSpacing: 1.2,
+     color: color,
+   );
+ }
 
  static TextStyle publicSans({double? fontSize,FontWeight? fontWeight,Color? color}){
    return GoogleFonts.publicSans(

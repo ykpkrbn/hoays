@@ -16,4 +16,10 @@ class MyColors{
    
    static const Color lexendColor = Color.fromRGBO(69, 90, 100, 1);
 
+
+   /// Jeton Kısmındaki renkler
+   static const Color jetonRenk1 = Color.fromRGBO(255, 210, 94, 1);
+   static const Color jetonRenk2 = Color.fromRGBO(255, 244, 205, 1);
+   static const Color jetonRenk3 = Color.fromRGBO(255, 213, 64, 1);
+
 }
